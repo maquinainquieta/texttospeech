@@ -22,8 +22,8 @@ export default class TopButtons extends Component {
                 Language
                 </DropdownToggle>
                 <DropdownMenu className={this.state.showDropdown1 ? "show" : ""}>
-                <DropdownItem>Dropdown Link</DropdownItem>
-                <DropdownItem>Dropdown Link</DropdownItem>
+                <DropdownItem>English</DropdownItem>
+                <DropdownItem>Spanish</DropdownItem>
                 </DropdownMenu>
             </ButtonDropdown>
 
@@ -32,8 +32,8 @@ export default class TopButtons extends Component {
             Voice
             </DropdownToggle>
             <DropdownMenu className={this.state.showDropdown2 ? "show" : ""}>
-            <DropdownItem>Dropdown Link</DropdownItem>
-            <DropdownItem>Dropdown Link</DropdownItem>
+            <DropdownItem>Jessica</DropdownItem>
+            <DropdownItem>Javier</DropdownItem>
             </DropdownMenu>
             </ButtonDropdown>
 
@@ -42,8 +42,8 @@ export default class TopButtons extends Component {
                 Speed
                 </DropdownToggle>
                 <DropdownMenu className={this.state.showDropdown3 ? "show" : ""}>
-                <DropdownItem>Dropdown Link</DropdownItem>
-                <DropdownItem>Dropdown Link</DropdownItem>
+                <DropdownItem>Slow</DropdownItem>
+                <DropdownItem>Fast</DropdownItem>
                 </DropdownMenu>
             </ButtonDropdown>
 
