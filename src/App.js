@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import LogoWriteOutLoud from './LogoWriteOutLoud.png';
 import './App.css';
 import TopButton from './topbuttons.js';
-import TextArea from './TextArea'
+import TextArea from './TextArea';
 
 
 class App extends Component {

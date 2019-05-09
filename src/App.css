@@ -1,7 +1,25 @@
+.body {
+  background-color: lightgray;
+}
+
 .App {
   text-align: center;
-  background-color: aliceblue;
 }
+
+.textArea {
+  margin: 2% 15%;
+}
+
+.iconsFont {
+    /* position: relative; */
+    /* top: -53px;
+    left: 47%; */
+    /* color: black;
+    background: grey;
+    padding: 10px;
+    border-radius: 50%; */
+}
+
 
 /* .App-logo {
   animation: App-logo-spin infinite 20s linear;
