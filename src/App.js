@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import LogoWriteOutLoud from './LogoWriteOutLoud.png';
 import './App.css';
 import TopButton from './topbuttons.js';
-import TextArea from './TextArea';
+import TextAreaWithIcons from './TextArea';
 
 
 class App extends Component {
@@ -12,7 +12,7 @@ class App extends Component {
       <div className="App">
       <img src={LogoWriteOutLoud} alt="Logo Write Out Loud Text to Speech" />
       <TopButton/>
-      <TextArea/>
+      <TextAreaWithIcons/>
       </div>
     );
   }
