@@ -9,10 +9,9 @@ export default class TextArea extends Component {
           <Icon name='minus'/>
           <Icon name='redo'/>
           <Icon name='plus'/>
-          
-          <Icon.Group>
+          <Icon.Group size='huge'>
           <Icon name='user' />
-          <Icon corner='bottom' name='play' />
+          <Icon corner='bottom' name='plus' />
           </Icon.Group>
         </React.Fragment>
         
