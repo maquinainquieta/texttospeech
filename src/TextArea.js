@@ -3,7 +3,7 @@ import { Icon, Form, TextArea } from 'semantic-ui-react';
 
 
 export default class TextAreaWithIcons extends Component {
-  render() {
+  render(props) {
     return (
         <React.Fragment>
           <Icon name='minus'/>
@@ -14,7 +14,7 @@ export default class TextAreaWithIcons extends Component {
             <Icon corner name='play' />
           </Icon.Group>
           <Form>
-            <TextArea rows={15} placeholder="Write it and I'll say it out loud..." />
+            <TextArea rows={15} placeholder="Write it and I'll say it out loud..." onChange={props.onChange}/>
           </Form>
         </React.Fragment>
     )
