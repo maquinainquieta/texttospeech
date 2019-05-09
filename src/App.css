@@ -7,17 +7,42 @@
 }
 
 .textArea {
-  margin: 2% 15%;
+  margin: 0 60px;
 }
 
-.iconsFont {
-    /* position: relative; */
-    /* top: -53px;
-    left: 47%; */
-    /* color: black;
-    background: grey;
-    padding: 10px;
-    border-radius: 50%; */
+/* top font icons position */
+.iconsTop {
+    position: relative;
+    top: 40px;
+    left: 40%;
+}
+
+/* top font icons design */
+.iconfont {
+    color: #3bd1b3;
+    background: #13138a;
+    padding: 1.2%;
+    margin: .5%;
+    border-radius: 20%;
+}
+
+/* user icon with play icon */ 
+.userPlay {
+  position: absolute;
+}
+
+/* just the user icon*/ 
+.user {
+  position: relative;
+  color: #13138a;
+  font-size: 350%;
+}
+
+/* just the play button */ 
+.play {
+  position: absolute;
+  color: #3bd1b3;
+  height: 10px;
 }
 
 
