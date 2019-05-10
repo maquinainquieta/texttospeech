@@ -12,28 +12,33 @@ class App extends Component {
     const key = 'c72b3784423941dc9c71739cbbc51d41';
     this.state = {
       key: key,
-      words: 'la pela es la pela'
+      text: ''
     }
   }
 
   onTextChange = (e, { value }) => {
-    this.setState({ text: value });
+    this.setState({ 
+      text: encodeURIComponent(value) 
+    });
   }
 
   play = () => {
-
+    var audio = document.getElementById('audio')
+    audio.load();
+    audio.play();
   }
 
   render() {
-    const url = `http://api.voicerss.org/?key=${this.state.key}&hl=ca-es&src=La%20pela%20es%20la%20pela`
+
+    const url = `http://api.voicerss.org/?key=${this.state.key}&hl=ca-es&src=${this.state.text}`
     return (
       <div className="App">
       <img src={LogoWriteOutLoud} alt="Logo Write Out Loud Text to Speech" />
       <TopButton/>
-      <audio id="audio" controls="controls">
-        <source src={this.state.url} id="mp3Source" type="audio/mp3"></source>
+      <audio id="audio">
+        <source src={url} id="mp3Source" type="audio/mp3"></source>
       </audio>
-      <TextAreaWithIcons onTextChange={this.onTextChange}/>
+      <TextAreaWithIcons onTextChange={this.onTextChange} onClick={this.play}/>
       </div>
     );
   }
