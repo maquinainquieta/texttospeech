@@ -14,7 +14,7 @@ class App extends Component {
       key: key,
       text: '',
       language: '',
-      //speed: ''
+      speed: ''
     }
   }
 
@@ -25,17 +25,16 @@ class App extends Component {
   }
 
   onLanguageChange = (e, {value}) => {
-    console.log("onLanguageChange..")
     this.setState({
       language: value
     })
   }
 
-  // onSpeedChange = (e, {value}) => {
-  //   this.setState({
-  //     speed: value
-  //   })
-  // }
+  onSpeedChange = (e, {value}) => {
+    this.setState({
+      speed: value
+    })
+  }
 
   play = () => {
     var audio = document.getElementById('audio')
@@ -45,13 +44,13 @@ class App extends Component {
 
   render() {
 
-    const url = `http://api.voicerss.org/?key=${this.state.key}&hl=${this.state.language}&src=${this.state.text}`
+    const url = `http://api.voicerss.org/?key=${this.state.key}&src=${this.state.text}&hl=${this.state.language}&r=${this.state.speed}`
     return (
       <div className="App">
       <img src={LogoWriteOutLoud} alt="Logo Write Out Loud Text to Speech" />
       <TopButton 
         onLanguageChange={this.onLanguageChange} 
-        // onSpeedChange={this.onSpeedChange}
+        onSpeedChange={this.onSpeedChange}
       /> 
       <audio id="audio">
         <source src={url} id="mp3Source" type="audio/mp3"></source>
