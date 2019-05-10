@@ -18,9 +18,10 @@ class App extends Component {
     }
   }
 
-  onTextChange = (e, { value }) => {
+  onTextChange = (e) => {
+    console.log('onBlur -> App.onTextChange()', e.target.value);
     this.setState({ 
-      text: encodeURIComponent(value) 
+      text: e.target.value
     });
   }
 
@@ -41,10 +42,17 @@ class App extends Component {
     audio.load();
     audio.play();
   }
+  clear = () => {
+    console.log('App.clear()');
+    this.setState({
+      text: ''
+    })
+  }
 
   render() {
-
-    const url = `http://api.voicerss.org/?key=${this.state.key}&src=${this.state.text}&hl=${this.state.language}&r=${this.state.speed}`
+    const encodedText =encodeURIComponent(this.state.text);
+    const url = `http://api.voicerss.org/?key=${this.state.key}&src=${encodedText}&hl=${this.state.language}&r=${this.state.speed}`
+    console.log('url updated', url)
     return (
       <div className="App">
       <img src={LogoWriteOutLoud} alt="Logo Write Out Loud Text to Speech" />
@@ -55,7 +63,11 @@ class App extends Component {
       <audio id="audio">
         <source src={url} id="mp3Source" type="audio/mp3"></source>
       </audio>
-      <TextAreaWithIcons onTextChange={this.onTextChange} onClick={this.play}/>
+      <TextAreaWithIcons 
+        text={this.state.text} 
+        onTextChange={this.onTextChange} 
+        onClear={this.clear}
+        onClick={this.play}/>
       </div>
     );
   }
