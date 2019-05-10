@@ -1,6 +1,7 @@
 import React from "react";
 import { Dropdown } from "semantic-ui-react";
 
+//For the Dropdown we used Open on Focus from semantic-ui-react.
 //All the language/accent options 
 const languageOptions = [
   {key: "ca-es", text: "Catalan", value: "ca-es",},
