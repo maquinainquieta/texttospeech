@@ -1,37 +1,17 @@
 import React from "react";
 import { Dropdown } from "semantic-ui-react";
+
+
 const languageOptions = [
   {
-    key: "Chinese",
-    text: "Chinese",
-    value: "Chinese",
+    key: "ca-es",
+    text: "Catalan",
+    value: "ca-es",
   },
   {
-    key: "Spanish",
-    text: "Spanish",
-    value: "Spanish",
-  },
-  {
-    key: "French",
-    text: "French",
-    value: "French",
-  },
-  {
-    key: "Russian",
-    text: "Russian",
-    value: "Russian",
-  }
-];
-const voiceOptions = [
-  {
-    key: "Jessica",
-    text: "Jessica",
-    value: "Jessica",
-  },
-  {
-    key: "Spanish",
-    text: "Spanish",
-    value: "Spanish",
+    key: "zh-cn",
+    text: "Chinese (China)",
+    value: "zh-cn",
   },
   {
     key: "French",
@@ -44,24 +24,24 @@ const voiceOptions = [
     value: "Russian",
   }
 ];
-const DropdownExampleOpenOnFocus = () => (
-  <React.Fragment>
-    <div class="dropdown-container">
-      <Dropdown
-        placeholder="Languages"
-        openOnFocus
-        selection
-        options={languageOptions}
-      />{" "}
-      <Dropdown
-        placeholder="Voice"
-        openOnFocus={false}
-        selection
-        options={voiceOptions}
-      />
-    </div>
-  </React.Fragment>
-);
+
+class DropdownExampleOpenOnFocus extends React.Component {
+  render () { 
+      return (
+        <React.Fragment>
+          <div class="dropdown-container">
+            <Dropdown
+              placeholder="Languages"
+              openOnFocus
+              selection
+              options={languageOptions}
+              onChange={this.props.onLanguageChange}
+            />{" "}
+          </div>
+        </React.Fragment>
+      );
+    }
+};
 export default DropdownExampleOpenOnFocus;
 
 

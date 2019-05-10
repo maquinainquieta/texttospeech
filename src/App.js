@@ -12,7 +12,9 @@ class App extends Component {
     const key = 'c72b3784423941dc9c71739cbbc51d41';
     this.state = {
       key: key,
-      text: ''
+      text: '',
+      language: '',
+      //speed: ''
     }
   }
 
@@ -22,6 +24,19 @@ class App extends Component {
     });
   }
 
+  onLanguageChange = (e, {value}) => {
+    console.log("onLanguageChange..")
+    this.setState({
+      language: value
+    })
+  }
+
+  // onSpeedChange = (e, {value}) => {
+  //   this.setState({
+  //     speed: value
+  //   })
+  // }
+
   play = () => {
     var audio = document.getElementById('audio')
     audio.load();
@@ -30,11 +45,14 @@ class App extends Component {
 
   render() {
 
-    const url = `http://api.voicerss.org/?key=${this.state.key}&hl=ca-es&src=${this.state.text}`
+    const url = `http://api.voicerss.org/?key=${this.state.key}&hl=${this.state.language}&src=${this.state.text}`
     return (
       <div className="App">
       <img src={LogoWriteOutLoud} alt="Logo Write Out Loud Text to Speech" />
-      <TopButton/>
+      <TopButton 
+        onLanguageChange={this.onLanguageChange} 
+        // onSpeedChange={this.onSpeedChange}
+      /> 
       <audio id="audio">
         <source src={url} id="mp3Source" type="audio/mp3"></source>
       </audio>
