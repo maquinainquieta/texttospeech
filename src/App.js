@@ -4,6 +4,7 @@ import LogoWriteOutLoud from './LogoWriteOutLoud.png';
 import './App.css';
 import TopButton from './topbuttons.js';
 import TextAreaWithIcons from './TextArea';
+//import { Icon } from 'semantic-ui-react';
 
 
 class App extends Component {
