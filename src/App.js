@@ -56,7 +56,7 @@ class App extends Component {
     console.log('url updated', url)
     return (
       <div className="App">
-      <img src={LogoWriteOutLoud} alt="Logo Write Out Loud Text to Speech" />
+      <img className="logo" src={LogoWriteOutLoud} alt="Logo Write Out Loud Text to Speech" />
       <div className="AppArea">
       <TopButton 
         onLanguageChange={this.onLanguageChange} 

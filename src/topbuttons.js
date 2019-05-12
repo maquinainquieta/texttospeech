@@ -53,6 +53,8 @@ class DropdownExampleOpenOnFocus extends React.Component {
               openOnFocus
               selection
               options={languageOptions}
+              floating
+              search
               onChange={this.props.onLanguageChange}
             />{" "}
             <Dropdown

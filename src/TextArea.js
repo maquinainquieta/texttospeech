@@ -8,7 +8,7 @@ export default class TextAreaWithIcons extends Component {
     super(props);
     this.state = {
       text:  '',
-      fontSize: 14
+      fontSize: 12
     }
   }
 
@@ -19,7 +19,7 @@ export default class TextAreaWithIcons extends Component {
 
   increaseFont = () => {
     this.setState({
-      fontSize: this.state.fontSize + 1
+      fontSize: this.state.fontSize + 0.5
     })
   }
   
@@ -33,7 +33,7 @@ export default class TextAreaWithIcons extends Component {
 
   decreaseFont = () => {
     this.setState({
-      fontSize: this.state.fontSize - 1
+      fontSize: this.state.fontSize - 0.5
     })
   }
 
@@ -43,11 +43,12 @@ export default class TextAreaWithIcons extends Component {
     return (
         <React.Fragment>
           <Menu attached="top" size={"mini"}>
+          <Menu.Menu position='right' >
             <Menu.Item>
               <Popup
-                trigger={<Icon onClick={this.decreaseFont} name='minus'/>}
+                trigger={<Icon onClick={this.decreaseFont} name='minus' />}
                 content='Decrese font size.'
-                position='left center'
+                position='top center'
                 size='mini'
                 inverted
               />
@@ -65,11 +66,12 @@ export default class TextAreaWithIcons extends Component {
               <Popup
                 trigger={<Icon onClick={this.increaseFont} name='plus'/>}
                 content='Increase font size'
-                position='right center'
+                position='top center'
                 size='mini'
                 inverted
               />
             </Menu.Item>
+          </Menu.Menu>
           </Menu>
           
           <Form attached>
