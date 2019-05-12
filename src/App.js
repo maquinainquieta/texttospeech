@@ -57,6 +57,7 @@ class App extends Component {
     return (
       <div className="App">
       <img src={LogoWriteOutLoud} alt="Logo Write Out Loud Text to Speech" />
+      <div className="AppArea">
       <TopButton 
         onLanguageChange={this.onLanguageChange} 
         onSpeedChange={this.onSpeedChange}
@@ -69,6 +70,7 @@ class App extends Component {
         onTextChange={this.onTextChange} 
         onClear={this.clear}
         onClick={this.play}/>
+      </div>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Icon, Form, TextArea } from 'semantic-ui-react';
-//import TextareaAutosize from "react-textarea-autosize";
+import { Icon, Menu, Popup, Form } from 'semantic-ui-react';
+import TextareaAutosize from "react-textarea-autosize";
 
 export default class TextAreaWithIcons extends Component {
 
@@ -8,7 +8,7 @@ export default class TextAreaWithIcons extends Component {
     super(props);
     this.state = {
       text:  '',
-      fontSize: 12
+      fontSize: 14
     }
   }
 
@@ -42,14 +42,40 @@ export default class TextAreaWithIcons extends Component {
     //console.log({props, "this.props": this.props})
     return (
         <React.Fragment>
-          <div attached='top'>
-            <Icon onClick={this.decreaseFont} name='minus'/>
-            <Icon onClick={this.clear} name='redo'/>
-            <Icon onClick={this.increaseFont} name='plus'/>
-          </div>
+          <Menu attached="top" size={"mini"}>
+            <Menu.Item>
+              <Popup
+                trigger={<Icon onClick={this.decreaseFont} name='minus'/>}
+                content='Decrese font size.'
+                position='left center'
+                size='mini'
+                inverted
+              />
+            </Menu.Item>
+            <Menu.Item>
+              <Popup
+                trigger={<Icon onClick={this.clear} name='redo'/>}
+                content='Clear all content.'
+                position= 'bottom center'
+                size='mini'
+                inverted
+              />
+            </Menu.Item>
+            <Menu.Item>
+              <Popup
+                trigger={<Icon onClick={this.increaseFont} name='plus'/>}
+                content='Increase font size'
+                position='right center'
+                size='mini'
+                inverted
+              />
+            </Menu.Item>
+          </Menu>
+          
           <Form attached>
-            <TextArea
-              rows={15} 
+            <TextareaAutosize
+              minRows={8}
+              maxRows={12} 
               placeholder="Write it and I'll say it out loud..." 
               onChange={this.onChange}
               onBlur={this.props.onTextChange}
@@ -59,12 +85,15 @@ export default class TextAreaWithIcons extends Component {
               }}
               value={this.state.text}
             />
-      <Icon.Group size='huge'
-        onClick={this.props.onClick}>
-        <Icon name='user' />
-        <Icon corner name='play' />
-      </Icon.Group>
           </Form>
+          <Menu attached="bottom">
+            <Icon.Group 
+              size='huge'
+              onClick={this.props.onClick}>
+              <Icon name='user' />
+              <Icon corner name='play' />
+            </Icon.Group>
+          </Menu>
         </React.Fragment>
     )
   }
