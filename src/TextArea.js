@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Icon, Menu, Popup, Form } from 'semantic-ui-react';
 import TextareaAutosize from "react-textarea-autosize";
-import { wrap } from 'module';
 
 export default class TextAreaWithIcons extends Component {
 
@@ -89,7 +88,7 @@ export default class TextAreaWithIcons extends Component {
               value={this.state.text}
             />
           </Form>
-          
+
           <Menu attached="bottom">
             <Icon.Group 
               size='huge'

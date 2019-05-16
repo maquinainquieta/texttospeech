@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
 import LogoWriteOutLoud from './LogoWriteOutLoud.png';
 import './App.css';
 import TopButton from './topbuttons.js';
 import TextAreaWithIcons from './TextArea';
-//import { Icon } from 'semantic-ui-react';
+
 
 
 class App extends Component {
@@ -13,9 +12,9 @@ class App extends Component {
     const key = 'c72b3784423941dc9c71739cbbc51d41';
     this.state = {
       key: key,
-      text: '',
-      language: '',
-      speed: ''
+      text: "",
+      language: "en-us",
+      speed: "0"
     }
   }
 
@@ -56,21 +55,20 @@ class App extends Component {
     console.log('url updated', url)
     return (
       <div className="App">
-      <img className="logo" src={LogoWriteOutLoud} alt="Logo Write Out Loud Text to Speech" />
-      <div className="AppArea">
-      <TopButton 
-        onLanguageChange={this.onLanguageChange} 
-        onSpeedChange={this.onSpeedChange}
-      /> 
-      <audio id="audio">
-        <source src={url} id="mp3Source" type="audio/mp3"></source>
-      </audio>
-      <TextAreaWithIcons 
-        text={this.state.text} 
-        onTextChange={this.onTextChange} 
-        onClear={this.clear}
-        onClick={this.play}/>
-      </div>
+        <img className="logo" src={LogoWriteOutLoud} alt="Logo Write Out Loud Text to Speech" />
+        <div className="AppAreaButtons">
+          <TopButton 
+            onLanguageChange={this.onLanguageChange} 
+            onSpeedChange={this.onSpeedChange}/> 
+          <audio id="audio">
+            <source src={url} id="mp3Source" type="audio/mp3"/>
+          </audio>
+          <TextAreaWithIcons 
+            text={this.state.text} 
+            onTextChange={this.onTextChange} 
+            onClear={this.clear}
+            onClick={this.play}/>
+        </div>
       </div>
     );
   }

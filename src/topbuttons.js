@@ -2,7 +2,7 @@ import React from "react";
 import { Dropdown } from "semantic-ui-react";
 
 //For the Dropdown we used Open on Focus from semantic-ui-react.
-//All the language/accent options 
+//All the language&accent options 
 const languageOptions = [
   {text: "Catalan", value: "ca-es", flag: 'es'},
   {text: "Chinese (China)", value: "zh-cn", flag: 'cn'},
@@ -34,13 +34,14 @@ const languageOptions = [
 
 //Speed Options to select can be any number from -10 to 10
 const speedOptions = [
-  {text: "Fastest", value: "9",},
-  {text: "Faster", value: "6",},
-  {text: "Fast", value: "3",},
+  {text: "Fastest", value: "6",},
+  {text: "Faster", value: "4",},
+  {text: "Fast", value: "2",},
   {text: "Normal", value: "0",},
-  {text: "Slow", value: "-3",},
-  {text: "Slower", value: "-6",},
-  {text: "Slowest", value: "-9",},
+  {text: "Slow", value: "-2",},
+  {text: "Slower", value: "-4",},
+  {text: "Slowest", value: "-6",},
+  {text: "Drunk", value: "-9",},
 ];
 
 class DropdownExampleOpenOnFocus extends React.Component {
@@ -53,7 +54,6 @@ class DropdownExampleOpenOnFocus extends React.Component {
               openOnFocus
               selection
               options={languageOptions}
-              floating
               search
               onChange={this.props.onLanguageChange}
             />{" "}
